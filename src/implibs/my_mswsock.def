@@ -1,0 +1,34 @@
+; Export file for the 32-bit version of `mswsock.dll'.
+;
+; Run `dlltool -d my_mswsock.def -l libmy_mswsock.a --kill-at -m i386' to
+; create an import library.
+
+LIBRARY mswsock.dll
+
+EXPORTS
+AcceptEx@32
+dn_expand@20
+EnumProtocolsA@12
+EnumProtocolsW@12
+GetAcceptExSockaddrs@32
+GetAddressByNameA@40
+GetAddressByNameW@40
+GetNameByTypeA@12
+GetNameByTypeW@12
+getnetbyname@4
+GetServiceA@28
+GetServiceW@28
+GetTypeByNameA@8
+GetTypeByNameW@8
+inet_network@4
+MigrateWinsockConfiguration@12
+NPLoadNameSpaces@12
+rcmd@24
+rexec@24
+rresvport@4
+s_perror@8
+sethostname@8
+SetServiceA@24
+SetServiceW@24
+TransmitFile@28
+WSARecvEx@16

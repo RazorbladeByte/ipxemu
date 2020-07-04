@@ -1,0 +1,13 @@
+; Export file for the 32-bit version of the ipxemu `thipx32.dll' library.
+
+EXPORTS
+_IPX_Initialise=my__IPX_Initialise@0 @2
+_IPX_Open_Socket95=my__IPX_Open_Socket95@4 @3
+_IPX_Close_Socket95=my__IPX_Close_Socket95@4 @4
+_IPX_Get_Connection_Number95=my__IPX_Get_Connection_Number95@0 @5
+_IPX_Send_Packet95=my__IPX_Send_Packet95@20 @6
+_IPX_Broadcast_Packet95=my__IPX_Broadcast_Packet95@8 @7
+_IPX_Get_Local_Target95=my__IPX_Get_Local_Target95@16 @8
+_IPX_Start_Listening95=my__IPX_Start_Listening95@0 @9
+_IPX_Shut_Down95=my__IPX_Shut_Down95 @10
+_IPX_Get_Outstanding_Buffer95=my__IPX_Get_Outstanding_Buffer95@4 @11

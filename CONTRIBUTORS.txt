@@ -1,0 +1,5 @@
+These people have helped test whether ipxemu
+is compatible with certain software:
+
+Pietry Couto
+  Tested ipxemu with WinQuake

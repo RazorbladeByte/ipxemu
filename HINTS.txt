@@ -1,0 +1,7 @@
+Internet play
+=======================================================================
+
+To play games over the internet using ipxemu, one may consider usage of
+a VPN (Virtual Private Network) server such as tinc
+(http://tinc-vpn.org/). This way, the games can communicate with each
+other as if they were on a LAN (Local Area Network).

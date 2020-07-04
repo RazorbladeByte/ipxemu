@@ -1,0 +1,110 @@
+/*
+Author: Jelle Geerts
+
+Usage of the works is permitted provided that this instrument is
+retained with the works, so that any entity that uses the works is
+notified of this instrument.
+
+DISCLAIMER: THE WORKS ARE WITHOUT WARRANTY.
+*/
+
+#include "project_info.h"
+#include "resource_ids.h"
+#include <winresrc.h>
+
+1 VERSIONINFO
+  FILEVERSION       APP_FILEVERSION
+  PRODUCTVERSION    APP_FILEVERSION
+  FILEFLAGSMASK     0
+  FILEFLAGS         0
+  FILEOS            VOS_NT_WINDOWS32
+  FILETYPE          VFT_APP
+  FILESUBTYPE       0
+{
+    BLOCK "StringFileInfo" {
+        BLOCK "040904B0" {
+            VALUE "FileDescription",  APP_NAME " (" APP_HOMEPAGE ")"
+            VALUE "FileVersion",      APP_FILEVERSION_STR
+            VALUE "LegalCopyright",   "Author: " AUTHOR
+            VALUE "OriginalFilename", "win_9x-nt4_dpwsockx_patch.exe"
+            VALUE "ProductName",      APP_NAME
+            VALUE "ProductVersion",   APP_FILEVERSION_STR
+        }
+    }
+    BLOCK "VarFileInfo" {
+        VALUE "Translation", 0x409, 0x4B0
+    }
+}
+
+#define DLG_FONT      "MS Shell Dlg"
+#define DLG_FONT_SIZE 8
+
+#define PAD 6
+
+#define BUTTON_WIDTH  50
+#define BUTTON_HEIGHT 14
+
+#define CANCEL_X  (DLG_WIDTH - PAD - BUTTON_WIDTH)
+#define RESTORE_X (CANCEL_X - PAD - BUTTON_WIDTH)
+#define PATCH_X   (RESTORE_X - PAD - BUTTON_WIDTH)
+
+#define BUTTON_BAR_HEIGHT BUTTON_HEIGHT
+
+#define INFO_HEIGHT 140
+#define INFO_Y      PAD
+#define INFO_BOTTOM (INFO_Y + INFO_HEIGHT)
+
+#define STATUS_HEIGHT 13
+#define STATUS_Y      (INFO_BOTTOM + PAD)
+#define STATUS_BOTTOM (STATUS_Y + STATUS_HEIGHT)
+
+#define DLG_WIDTH  280
+#define DLG_HEIGHT (                                                          \
+        PAD +                                                                 \
+        INFO_HEIGHT +                                                         \
+        PAD +                                                                 \
+        STATUS_HEIGHT +                                                       \
+        PAD +                                                                 \
+        BUTTON_BAR_HEIGHT +                                                   \
+        PAD)
+
+DLG DIALOGEX 0, 0, DLG_WIDTH, DLG_HEIGHT
+STYLE DS_SHELLFONT | DS_CENTER | WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU | WS_VISIBLE | DS_3DLOOK
+CAPTION "Windows 9x and Windows NT4 dpwsockx patch"
+FONT DLG_FONT_SIZE, DLG_FONT
+{
+    EDITTEXT DLG_INFO,
+        PAD,
+        INFO_Y,
+        DLG_WIDTH - PAD - PAD,
+        INFO_HEIGHT,
+        ES_READONLY | ES_MULTILINE, 0
+
+    EDITTEXT DLG_STATUS,
+        PAD,
+        STATUS_Y,
+        DLG_WIDTH - PAD - PAD,
+        STATUS_HEIGHT,
+        ES_READONLY, 0
+
+    PUSHBUTTON "&Patch", DLG_PATCH,
+        PATCH_X,
+        STATUS_BOTTOM + PAD,
+        BUTTON_WIDTH,
+        BUTTON_HEIGHT,
+        0, 0
+
+    PUSHBUTTON "&Restore", DLG_RESTORE,
+        RESTORE_X,
+        STATUS_BOTTOM + PAD,
+        BUTTON_WIDTH,
+        BUTTON_HEIGHT,
+        0, 0
+
+    PUSHBUTTON "Cancel", IDCANCEL,
+        CANCEL_X,
+        STATUS_BOTTOM + PAD,
+        BUTTON_WIDTH,
+        BUTTON_HEIGHT,
+        0, 0
+}

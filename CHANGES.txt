@@ -1,0 +1,54 @@
+Version 1.0.4 re-release (2019-06-29):
+=======================================================================
+
+* Added `CONTRIBUTORS.txt'.
+* WinQuake is listed as a supported game in `games.html'.
+* The binaries in this release are identical to the
+  original ipxemu 1.0.4 release.
+
+Version 1.0.4 (2014-08-22):
+=======================================================================
+
+* Updated the Warcraft II BNE bugfix so it can patch (and restore) both
+  version 2.0.2.0 and 2.0.2.1 of "Warcraft II BNE.exe".
+* For emulated sockets, set the socket family to AF_IPX in
+  wsock32.dll's recvfrom() (it was incorrectly set to NSPROTO_IPX
+  before).
+
+Version 1.0.3 (2014-04-27):
+=======================================================================
+
+* Updated the `Problems and workarounds' section for `Yuri's Revenge'
+  in 'games.html'.
+* Changed the FILETYPE in the VERSIONINFO of the
+  win_9x-nt4_dpwsockx_patch to VFT_APP (from VFT_DLL).
+* Added a demo screenshot to both the SourceForge project page and web
+  page.
+
+Version 1.0.2 (2012-07-14):
+=======================================================================
+
+* Made it less probable for two instances of `thipx32.dll' to use the
+  same broadcast signature.
+* Added a tool with which one can apply a bugfix to
+  `Warcraft II BNE.exe', to solve the `Waiting for response' problem.
+  See `tools\warcraft_2_bne_bugfix\README.txt' for more information.
+* Documented (in the `games.html' document) that Red Alert 1 needs to
+  run in Windows 95 compatibility mode for the `Network' option to
+  appear in the `Multiplayer Game' menu.
+* Changed the license to the Fair License.
+
+Version 1.0.1 (2012-01-10):
+=======================================================================
+
+* Added more debugging output to the debug version of `wsock32.dll'
+  (found in ipxemu-debug-xxx.zip). It will now log the IP address and
+  port for incoming and outgoing fragments of data. (Remember, the
+  `wsock32-log.txt' file can be found in the temporary directory,
+  %TMP%, which on Windows 7 is usually equal to
+  `C:\Users\username\AppData\Local\Temp'.)
+
+Version 1.0.0 (2011-06-25):
+=======================================================================
+
+* First release.
